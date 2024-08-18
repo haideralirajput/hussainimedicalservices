@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
+    <style>
+        .btn-outline-light:hover {
+            color: #25bef7;
+            background-color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
+        .bg-primary {
+            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+        }
+        .list-group-item.active {
+            z-index: 2;
+            color: #fff;
+            background-color: #342ac1;
+            border-color: #007bff;
+        }
+        .text-primary {
+            color: #342ac1 !important;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        #inputbtn:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+  <body style="padding-top: 50px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <a class="navbar-brand" href="#"
+        ><i class="fa fa-user-plus" aria-hidden="true"></i> Hussani Medical
+        Services
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="logout.html"
+              ><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+        </ul>
+        <!-- <form
+          class="form-inline my-2 my-lg-0"
+          method="post"
+          action="search.php"
+        >
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Enter contact number"
+            aria-label="Search"
+            name="contact"
+          />
+          <input
+            type="submit"
+            class="btn btn-outline-light"
+            id="inputbtn"
+            name="search_submit"
+            value="Search"
+          />
+        </form> -->
+        <form class="form-inline my-2 my-lg-0"  action="search.html">
+          <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Enter contact number"
+            aria-label="Search"
+            name="contact"
+            required
+          />
+          <input
+            type="submit"
+            class="btn btn-outline-light"
+            id="inputbtn"
+            name="search_submit"
+            value="Search"
+          />
+        </form>
+        
+        <script>
+          document.querySelector('form').addEventListener('submit', function(event) {
+            var contactInput = document.querySelector('input[name="contact"]');
+            
+            if (contactInput.value.trim() === '') {
+              event.preventDefault(); // Prevent the form from submitting
+              alert('Please enter a contact number.'); // Display custom message
+            }
+          });
+        </script>
+        
+      </div>
+    </nav>
+    <div class="container-fluid" style="margin-top: 50px">
+      <h3
+        style="
+          margin-left: 40%;
+          padding-bottom: 20px;
+          font-family: 'IBM Plex Sans', sans-serif;
+        "
+      >
+        Welcome &nbsp Dr Haider Ali
+      </h3>
+      <div class="row">
+        <div class="col-md-4" style="max-width: 18%; margin-top: 3%">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a
+              class="list-group-item list-group-item-action active"
+              href="#list-dash"
+              role="tab"
+              aria-controls="home"
+              data-toggle="list"
+              >Dashboard</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="#list-app"
+              id="list-app-list"
+              role="tab"
+              data-toggle="list"
+              aria-controls="home"
+              >Appointments</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="#settings"
+              id="doc_settings"
+              role="tab"
+              data-toggle="list"
+              aria-controls="home"
+              >Profile Settings</a
+            >
+          </div>
+          <br />
+        </div>
+        <div class="col-md-8" style="margin-top: 3%">
+          <div class="tab-content" id="nav-tabContent" style="width: 950px">
+            <div
+              class="tab-pane fade show active"
+              id="list-dash"
+              role="tabpanel"
+              aria-labelledby="list-dash-list"
+            >
+              <div class="container-fluid container-fullw bg-white">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="panel panel-white no-radius text-center">
+                      <div class="panel-body" style="font-size: 20px">
+                        <span class="fa-stack fa-2x">
+                          <i class="fa fa-square fa-stack-2x text-primary"></i>
+                          <i class="fa fa-list fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4
+                          class="StepTitle"
+                          style="margin-top: 5%; font-size: 30px"
+                        >
+                          View Appointments
+                        </h4>
+                        <script>
+                          function clickDiv(id) {
+                            document.querySelector(id).click();
+                          }
+                        </script>
+                        <p class="links cl-effect-1">
+                          <a
+                            href="#list-app"
+                            onclick="clickDiv('#list-app-list')"
+                          >
+                            Appointment List
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="panel panel-white no-radius text-center">
+                      <div class="panel-body" style="font-size: 20px">
+                        <span class="fa-stack fa-2x">
+                          <i class="fa fa-square fa-stack-2x text-primary"></i>
+                          <i class="fa fa-gear fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4
+                          class="StepTitle"
+                          style="margin-top: 5%; font-size: 30px"
+                        >
+                          Profile Settings
+                        </h4>
+                        <script>
+                          function clickDiv(id) {
+                            document.querySelector(id).click();
+                          }
+                        </script>
+                        <p class="links cl-effect-1">
+                          <a
+                            href="#settings"
+                            onclick="clickDiv('#doc_settings')"
+                          >
+                            Settings
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Appointment List is started -->
+            <div
+              class="tab-pane fade"
+              id="list-app"
+              role="tabpanel"
+              aria-labelledby="list-home-list"
+            >
+              <table class="table table-hover">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">Patient ID</th>
+                    <th scope="col">Appointment ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Appointment Date</th>
+                    <th scope="col">Appointment Time</th>
+                    <th scope="col">Current Status</th>
+                    <th scope="col" colspan="2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>Ahmed</td>
+                    <td>Khan</td>
+                    <td>Male</td>
+                    <td>ahmed.khan@example.com</td>
+                    <td>1234567890</td>
+                    <td>2024-08-01</td>
+                    <td>10:00 AM</td>
+                    <td>Active</td>
+                    <td><button class="btn btn-success">Approve</button></td>
+                    <td><button class="btn btn-danger">Cancel</button></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>102</td>
+                    <td>Ayesha</td>
+                    <td>Ali</td>
+                    <td>Female</td>
+                    <td>ayesha.ali@example.com</td>
+                    <td>0987654321</td>
+                    <td>2024-08-01</td>
+                    <td>11:00 AM</td>
+                    <td>Cancelled by Patient</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>103</td>
+                    <td>Faisal</td>
+                    <td>Ahmed</td>
+                    <td>Male</td>
+                    <td>faisal.ahmed@example.com</td>
+                    <td>1122334455</td>
+                    <td>2024-08-01</td>
+                    <td>12:00 PM</td>
+                    <td>Cancelled by You</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>104</td>
+                    <td>Zainab</td>
+                    <td>Hassan</td>
+                    <td>Female</td>
+                    <td>zainab.hassan@example.com</td>
+                    <td>2233445566</td>
+                    <td>2024-08-01</td>
+                    <td>01:00 PM</td>
+                    <td>Approved</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>105</td>
+                    <td>Ali</td>
+                    <td>Zaidi</td>
+                    <td>Male</td>
+                    <td>ali.zaidi@example.com</td>
+                    <td>3344556677</td>
+                    <td>2024-08-01</td>
+                    <td>02:00 PM</td>
+                    <td>Rescheduled</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>106</td>
+                    <td>Fatima</td>
+                    <td>Saeed</td>
+                    <td>Female</td>
+                    <td>fatima.saeed@example.com</td>
+                    <td>4455667788</td>
+                    <td>2024-08-01</td>
+                    <td>03:00 PM</td>
+                    <td>Active</td>
+                    <td><button class="btn btn-success">Approve</button></td>
+                    <td><button class="btn btn-danger">Cancel</button></td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>107</td>
+                    <td>Omar</td>
+                    <td>Rashid</td>
+                    <td>Male</td>
+                    <td>omar.rashid@example.com</td>
+                    <td>5566778899</td>
+                    <td>2024-08-01</td>
+                    <td>04:00 PM</td>
+                    <td>Cancelled by Patient</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>108</td>
+                    <td>Sara</td>
+                    <td>Khan</td>
+                    <td>Female</td>
+                    <td>sara.khan@example.com</td>
+                    <td>6677889900</td>
+                    <td>2024-08-01</td>
+                    <td>05:00 PM</td>
+                    <td>Cancelled by You</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>109</td>
+                    <td>Hassan</td>
+                    <td>Sheikh</td>
+                    <td>Male</td>
+                    <td>hassan.sheikh@example.com</td>
+                    <td>7788990011</td>
+                    <td>2024-08-01</td>
+                    <td>06:00 PM</td>
+                    <td>Approved</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>110</td>
+                    <td>Maryam</td>
+                    <td>Ali</td>
+                    <td>Female</td>
+                    <td>maryam.ali@example.com</td>
+                    <td>8899001122</td>
+                    <td>2024-08-01</td>
+                    <td>07:00 PM</td>
+                    <td>Rescheduled</td>
+                    <td>Taken</td>
+                    <td>Taken</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+            </div>
+
+            <!-- Appointment List is ended -->
+
+            <!-- Settings is started -->
+            <div
+              class="tab-pane fade"
+              id="settings"
+              role="tabpanel"
+              aria-labelledby="list-home-list"
+            >
+              <form
+                action="doctorpanel.html"
+                onsubmit="showSuccessAlert(event)"
+              >
+                <div class="row register-form">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name *"
+                        name="dfname"
+                        value="Haider"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Your Email *"
+                        value="haider@example.com"
+                        name="demail"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <select
+                        class="form-control"
+                        id="specialization"
+                        name="ds"
+                      >
+                        <option value="General">General</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Fees *"
+                        id="dfees"
+                        value="100"
+                        name="dfees"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <div class="maxl">
+                        <label class="radio inline">
+                          <input
+                            type="radio"
+                            name="dgender"
+                            value="Male"
+                            checked
+                          />
+                          <span> Male </span>
+                        </label>
+                        <label class="radio inline">
+                          <input type="radio" name="dgender" value="Female" />
+                          <span> Female </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Last Name *"
+                        name="dlname"
+                        value="Ali"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="tel"
+                        minlength="11"
+                        maxlength="12"
+                        name="dcontact"
+                        class="form-control"
+                        value="03002907467"
+                        placeholder="Your Phone *"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control" id="dc" name="dcity">
+                        <option value="Karachi">Karachi</option>
+                        <option value="Lahore">Lahore</option>
+                        <option value="Islamabad">Islamabad</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Password *"
+                        id="dpassword"
+                        name="dpassword"
+                        value="password123"
+                        onkeyup="dcheck();"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div style="margin-left: 20px">
+                    <input
+                      type="submit"
+                      class="btn btn-primary"
+                      onclick="return dchecklen();"
+                      value="Update"
+                    />
+                  </div>
+                </div>
+              </form>
+              <script>
+                  function showSuccessAlert(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            alert('Your data is successfully updated'); // Show the alert message
+            
+            // Refresh the page after a short delay
+            setTimeout(function() {
+                window.location.href = 'doctorpanel.html'; // Redirect to the target page
+            }, 1000); // 1000 milliseconds = 1 second delay
+        }
+            </script>
+            </div>
+            <!-- Settings is ended -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+      integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+      integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js"></script>
+  </body>
+</html>

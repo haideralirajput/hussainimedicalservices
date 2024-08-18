@@ -1,0 +1,450 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <style>
+      .bg-primary {
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+      }
+  
+      .list-group-item.active {
+        z-index: 2;
+        color: #fff;
+        background-color: #342ac1;
+        border-color: #007bff;
+      }
+  
+      .text-primary {
+        color: #342ac1 !important;
+      }
+  
+      .btn-primary {
+        background-color: #3c50c1;
+        border-color: #3c50c1;
+      }
+  
+      button:hover {
+        cursor: pointer;
+      }
+  
+      #inputbtn:hover {
+        cursor: pointer;
+      }
+    
+
+
+    </style>
+  </head>  
+
+<body style="padding-top:50px;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <a class="navbar-brand" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Hussaini Medical Services </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="logout.html"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid" style="margin-top:50px;">
+    <h3 style="margin-left: 40%;  padding-bottom: 20px; font-family: 'IBM Plex Sans', sans-serif;"> Welcome
+      &nbspHaider Ali
+    </h3>
+    <div class="row">
+      <div class="col-md-4" style="max-width:25%; margin-top: 3%">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-dash-list" data-toggle="list" href="#list-dash" role="tab" aria-controls="home">Dashboard</a>
+          <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Book Appointment</a>
+          <a class="list-group-item list-group-item-action" href="#app-hist" id="list-pat-list" role="tab" data-toggle="list" aria-controls="home">Appointment History</a>
+          <a class="list-group-item list-group-item-action" href="#settings" id="doc_settings" role="tab" data-toggle="list" aria-controls="home">Profile Settings</a>
+
+        </div><br>
+      </div>
+      <div class="col-md-8" style="margin-top: 3%;">
+        <div class="tab-content" id="nav-tabContent" style="width: 950px;">
+          <div class="tab-pane fade  show active" id="list-dash" role="tabpanel" aria-labelledby="list-dash-list">
+            <div class="container-fluid container-fullw bg-white">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;"> Book My Appointment</h4>
+                      <script>
+                        function clickDiv(id) {
+                          document.querySelector(id).click();
+                        }
+                      </script>
+                      <p class="links cl-effect-1">
+                        <a href="#list-home" onclick="clickDiv('#list-home-list')">
+                          Book Appointment
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;">My Appointments</h2>
+
+                        <p class="cl-effect-1">
+                          <a href="#app-hist" onclick="clickDiv('#list-pat-list')">
+                            View Appointment History
+                          </a>
+                        </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-gear fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;">Profile Settings</h4>
+                      <script>
+                        function clickDiv(id) {
+                          document.querySelector(id).click();
+                        }
+                      </script>
+                      <p class="links cl-effect-1">
+                        <a href="#settings" onclick="clickDiv('#doc_settings')">
+                          Settings
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- APPOINTMENT FORM IS STARTED -->
+          <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+            <div class="container-fluid">
+                <div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h4>Create an appointment</h4>
+                    </center>
+                    <br>
+                    <form class="form-group"  action="patient-panel.html" onsubmit="return msg()">
+                      <div class="row">
+                        <!-- Hidden DoctorID -->
+                        <div class="col-md-12">
+                          <input type="hidden" name="DoctorID" id="DoctorID">
+                        </div>
+              
+                        <!-- Specialization -->
+                        <div class="col-md-4">
+                          <label for="Specialization">Specialization:</label>
+                        </div>
+                        <div class="col-md-8">
+                          <select name="Specialization" class="form-control" id="ds">
+                            <option value="" disabled selected>Select Specialization</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Oncology">Oncology</option>
+                            <option value="Dermatology">Dermatology</option>
+                            <option value="Gastroenterology">Gastroenterology</option>
+                            <option value="Gynecology">Gynecology</option>
+                            <option value="Urology">Urology</option>
+                            <option value="Pulmonology">Pulmonology</option>
+                            <option value="Rheumatology">Rheumatology</option>
+                            <option value="Nephrology">Nephrology</option>
+                            <option value="Endocrinology">Endocrinology</option>
+                            <option value="Hematology">Hematology</option>
+                            <option value="General Surgery">General Surgery</option>
+                          </select>
+                        </div>
+              <br><br>
+                        <!-- Doctors -->
+                        <div class="col-md-4">
+                          <label for="dname">Doctors:</label>
+                        </div>
+                        <div class="col-md-8">
+                          <select name="dname" class="form-control" id="dname" required="required">
+                            <option value="" disabled selected>Select Doctor</option>
+                            <option value="Dr. Ahmed Khan">Dr. Ahmed Khan</option>
+                            <option value="Dr. Fatima Ali">Dr. Fatima Ali</option>
+                            <option value="Dr. Ali Rehman">Dr. Ali Rehman</option>
+                            <option value="Dr. Aisha Malik">Dr. Aisha Malik</option>
+                            <option value="Dr. Tariq Mahmood">Dr. Tariq Mahmood</option>
+                            <option value="Dr. Sara Iqbal">Dr. Sara Iqbal</option>
+                            <option value="Dr. Bilal Hussain">Dr. Bilal Hussain</option>
+                            <option value="Dr. Nadia Javed">Dr. Nadia Javed</option>
+                            <option value="Dr. Usman Shah">Dr. Usman Shah</option>
+                            <option value="Dr. Maria Ahmed">Dr. Maria Ahmed</option>
+                            <option value="Dr. Khalid Farooq">Dr. Khalid Farooq</option>
+                            <option value="Dr. Amina Bibi">Dr. Amina Bibi</option>
+                            <option value="Dr. Zaid Khan">Dr. Zaid Khan</option>
+                            <option value="Dr. Hina Sheikh">Dr. Hina Sheikh</option>
+                            <option value="Dr. Ahmed Qureshi">Dr. Ahmed Qureshi</option>
+                          </select>
+                        </div>
+              <br><br>
+                        <!-- Consultancy Fees -->
+                        <div class="col-md-4">
+                          <label for="Fees">Consultancy Fees:</label>
+                        </div>
+                        <div class="col-md-8">
+                          <input class="form-control" type="text" name="dfees" id="Fees" value="3000" readonly="readonly">
+                        </div>
+              <br><br>
+                        <!-- City -->
+                        <div class="col-md-4">
+                          <label for="city">City:</label>
+                        </div>
+                        <div class="col-md-8">
+                          <select name="city" class="form-control" id="city" required="required">
+                            <option value="" disabled selected>Select City</option>
+                            <option value="Karachi">Karachi</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Rawalpindi">Rawalpindi</option>
+                            <option value="Faisalabad">Faisalabad</option>
+                            <option value="Multan">Multan</option>
+                            <option value="Peshawar">Peshawar</option>
+                            <option value="Quetta">Quetta</option>
+                            <option value="Gujranwala">Gujranwala</option>
+                            <option value="Sialkot">Sialkot</option>
+                          </select>
+                        </div>
+              <br><br>
+                        <!-- Appointment Date -->
+                        <div class="col-md-4">
+                          <label for="appdate">Appointment Date:</label>
+                        </div>
+                        <div class="col-md-8">
+                          <input type="date" class="form-control" name="appdate" id="appdate">
+                        </div>
+              <br><br>
+                        <!-- Appointment Time -->
+                        <div class="col-md-4">
+                          <label for="apptime">Appointment Time:</label>
+                        </div>
+                        <div class="col-md-8">
+                          <select name="apptime" class="form-control" id="apptime" required="required">
+                            <option value="" disabled selected>Select Time</option>
+                            <option value="08:00:00">8:00 AM</option>
+                            <option value="10:00:00">10:00 AM</option>
+                            <option value="12:00:00">12:00 PM</option>
+                            <option value="14:00:00">2:00 PM</option>
+                            <option value="16:00:00">4:00 PM</option>
+                          </select>
+                        </div>
+              <br><br>
+                        <!-- Submit Button -->
+                        <div class="col-md-12">
+                          <input type="submit" name="appsubmit" value="Create new entry" class="btn btn-primary" id="inputbtn">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <script>
+                function msg(){
+                    alert("Your apointment is booked successfully")
+                }
+              </script>
+          </div>
+          <!-- APPOINTMENT FORM IS ENDED -->
+
+          <!-- APPOINTMENT HISTORY IS STARTED -->
+          <div class="tab-pane fade" id="app-hist" role="tabpanel" aria-labelledby="list-pat-list">
+
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Doctor Name</th>
+                    <th scope="col">Consultancy Fees</th>
+                    <th scope="col">Appointment Date</th>
+                    <th scope="col">Appointment Time</th>
+                    <th scope="col">Current Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Dr. Ahmed Khan</td>
+                    <td>3000</td>
+                    <td>2024-08-15</td>
+                    <td>10:00 AM</td>
+                    <td>Active</td>
+                    <td>
+                      <a href="#" onClick="return confirm('Are you sure you want to cancel this appointment?')" title="Cancel Appointment">
+                        <button class="btn btn-danger">Cancel</button>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Fatima Ali</td>
+                    <td>2500</td>
+                    <td>2024-08-16</td>
+                    <td>11:00 AM</td>
+                    <td>Cancelled by Patient</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Ali Rehman</td>
+                    <td>3200</td>
+                    <td>2024-08-17</td>
+                    <td>12:00 PM</td>
+                    <td>Approved</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Aisha Malik</td>
+                    <td>2700</td>
+                    <td>2024-08-18</td>
+                    <td>01:00 PM</td>
+                    <td>Rescheduled</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Tariq Mahmood</td>
+                    <td>3500</td>
+                    <td>2024-08-19</td>
+                    <td>02:00 PM</td>
+                    <td>Active</td>
+                    <td>
+                      <a href="#" onClick="return confirm('Are you sure you want to cancel this appointment?')" title="Cancel Appointment">
+                        <button class="btn btn-danger">Cancel</button>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Sara Iqbal</td>
+                    <td>2800</td>
+                    <td>2024-08-20</td>
+                    <td>03:00 PM</td>
+                    <td>Cancelled by You</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Bilal Hussain</td>
+                    <td>2900</td>
+                    <td>2024-08-21</td>
+                    <td>04:00 PM</td>
+                    <td>Unknown Status</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Nadia Javed</td>
+                    <td>3100</td>
+                    <td>2024-08-22</td>
+                    <td>05:00 PM</td>
+                    <td>Active</td>
+                    <td>
+                      <a href="#" onClick="return confirm('Are you sure you want to cancel this appointment?')" title="Cancel Appointment">
+                        <button class="btn btn-danger">Cancel</button>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Usman Shah</td>
+                    <td>3300</td>
+                    <td>2024-08-23</td>
+                    <td>06:00 PM</td>
+                    <td>Cancelled by Patient</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Maria Ahmed</td>
+                    <td>3000</td>
+                    <td>2024-08-24</td>
+                    <td>07:00 PM</td>
+                    <td>Approved</td>
+                    <td>Taken</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. Khalid Farooq</td>
+                    <td>3400</td>
+                    <td>2024-08-25</td>
+                    <td>08:00 PM</td>
+                    <td>Rescheduled</td>
+                    <td>Taken</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            <br>
+          </div>
+          <!-- APPOINTMENT HISTORY IS ENDED -->
+
+          <!-- Settings is started -->          
+          <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="list-home-list">
+
+            <form action="patient-panel.html" onsubmit="return upd()">
+                <div class="row register-form">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="First Name *" name="dfname" value="Ali" required />
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Your Email *" value="ali@example.com" name="demail" />
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Password *" id="dpassword" name="dpassword" value="password123" onkeyup='dcheck();' required />
+                    </div>
+                    <div class="form-group">
+                      <div class="maxl">
+                        <label class="radio inline">
+                          <input type="radio" name="dgender" value="Male" checked>
+                          <span> Male </span>
+                        </label>
+                        <label class="radio inline">
+                          <input type="radio" name="dgender" value="Female">
+                          <span>Female </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Last Name *" name="dlname" value="Khan" required />
+                    </div>
+                    <div class="form-group">
+                      <input type="tel" minlength="11" maxlength="12" name="dcontact" class="form-control" value="03002907467" placeholder="Your Phone *" />
+                    </div>
+                  </div>
+                  <div style="margin-left: 20px;">
+                    <input type="submit" class="btn btn-primary" name="patupdate" onclick="return dchecklen();" value="Update" />
+                  </div>
+                </div>
+              </form>
+              
+          </div>
+          <!-- Settings is ended -->
+           <script>
+            function upd(){
+                alert("Your data is updated successfully")
+            }
+           </script>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js">
+  </script>
+</body>
+
+</html>
